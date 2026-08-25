@@ -1,60 +1,28 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
-/// <summary>
-/// This player controller class will update the events from the vehicle player.
-/// Standar coding documentation can be found in 
-/// https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments
-/// </summary>
-
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    //Variables
-    //velocidad del vehiculo
-    public float speed = 20.0f;
-    //variable global para la velocidad de giro
-    public float turnSpeed = 20.0f;
-    //Variable para mover el teclado
-    public float horizontalInput;
-    //variable para que el carro se mueva para adelante
-    public float forwardInput;
+    public float velocidad = 5f;
+    private Rigidbody rb;
+    private Vector3 movimiento;
 
-    //Camera variables
-    public Camera mainCamera;
-    public Camera hoodCamera;
-    public KeyCode switchKey; //Tecla que permite cambiar entre cámaras
-    //Multiplayer variables
-    public string inputId;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    /// <summary>
-    /// This method is called before the first frame update
-    /// </summary>
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;   // que no se voltee
     }
 
-    // Update is called once per frame
-    /// <summary>
-    /// This method is called once per frame
-    /// </summary>
-    void Update()
+    void Update()   // cada frame: leer el teclado
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        forwardInput = Input.GetAxis("Vertical");
-        //Mover vehículo hacia adelante
-        //transform.Translate(0,0,1);
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);
-        //Modificar el giro
-        transform.Translate(Vector3.right * Time.deltaTime * turnSpeed * horizontalInput);
-        //Vamos a poder girar
-        transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
-        //Cambio entre camaras
-        if(Input.GetKeyDown (switchKey))
-        {
-            mainCamera.enabled = !mainCamera.enabled;
-            hoodCamera.enabled  = !hoodCamera.enabled;
-        }
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
+        movimiento = new Vector3(x, 0f, z).normalized;
+    }
+
+    void FixedUpdate()   // física: mover con el Rigidbody
+    {
+        rb.MovePosition(rb.position + movimiento * velocidad * Time.fixedDeltaTime);
     }
 }
 
