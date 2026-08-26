@@ -2,34 +2,39 @@ using UnityEngine;
 
 public class Enemigo : MonoBehaviour
 {
-    //velocidad porque se va estar moviendo de lugar
-    public float velocidad = 2f;   // qué tan rápido se desplaza
-    public float alcance = 3f;     // cuántas unidades se aleja del centro
-    //tiene un origen que es el vector inicial
-    private Vector3 origen;
+    public Transform player;
+    public float velocidadPersecucion = 3f;
 
+    [SerializeField] private float timer = 5;
+    private float bulletTime;
+    public GameObject enemyBullet;
+    public Transform spawnPoint;
+    public float enemySpeed;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        origen = transform.position;
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
-        // PingPong va y viene entre 0 y alcance*2; al restar alcance
-        // el recorrido queda centrado en la posición original.
-        //funcion ping pong: va y regresa, da el movimiento necesario para que se mueva
-        float desfase = Mathf.PingPong(Time.time * velocidad, alcance * 2f) - alcance;
-        //ajustamos el vector para hacer el movimiento del cubo
-        transform.position = origen + new Vector3(desfase, 0f, 0f);
+        transform.position = Vector3.MoveTowards(transform.position, player.position, velocidadPersecucion * Time.deltaTime);
+        Vector3 objetivo = new Vector3(player.position.x, transform.position.y, player.position.z);
+        transform.LookAt(objetivo);
+        ShootAtPlayer();
+        
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("bombero"))
-        {
-            //Su el jugador toca el fuego se acaba la partida
-            GameMaster gm = Object.FindFirstObjectByType<GameMaster>();
-            if (gm != null) gm.Perder();
-        }
+    void ShootAtPlayer(){
+        bulletTime -= Time.deltaTime;
+
+        if(bulletTime > 0) return;
+        bulletTime = timer;
+        //How we intialate the spawn point from the bullet
+        GameObject bulletObj = Instantiate(enemyBullet, spawnPoint.position, spawnPoint.rotation) as GameObject;
+        Rigidbody bulletRig = bulletObj.GetComponent<Rigidbody>();
+        bulletRig.AddForce(spawnPoint.forward * enemySpeed, ForceMode.Impulse);
+        Destroy(bulletObj, 5f);
     }
 }
