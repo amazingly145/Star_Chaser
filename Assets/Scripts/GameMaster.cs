@@ -10,7 +10,7 @@ public class GameMaster : MonoBehaviour
     public Renderer salida;           // para pintarla de color como aviso
     public int vidas = 5;
 
-    private int rescatadas = 0; //contador de victimas resctadas
+    public int rescatadas = 0; //contador de victimas resctadas
     private bool terminada = false; //condicion de victoria
 
     // ¿Ya se rescataron todas? La Salida lo consulta antes de dejar ganar.
