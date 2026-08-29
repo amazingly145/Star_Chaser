@@ -2018,6 +2018,11 @@ Transform:
   - {fileID: 1208845241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1172512399 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7389927039909831122, guid: 9d8e34a90e7b2174883657d4d787397f, type: 3}
+  m_PrefabInstance: {fileID: 5656532210806712905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1208845237 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 287336013944320316, guid: d7f2d18e24058c445b63eabe4e19604f, type: 3}
@@ -2137,6 +2142,53 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.64431, y: 0, z: 2.89767}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1366845992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1366845994}
+  - component: {fileID: 1366845993}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1366845993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366845992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42a2d186cc49cf43901b50cbc57e5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameMaster
+  meta: 3
+  salida: {fileID: 1172512399}
+  vidas: 5
+--- !u!4 &1366845994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366845992}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.65824, y: 0, z: 8.76505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2697,13 +2749,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2205032590864761053, guid: 6b1d371ac857045438da614384c28ffe, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4616957485509622568, guid: 6b1d371ac857045438da614384c28ffe, type: 3}
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4616957485509622568, guid: 6b1d371ac857045438da614384c28ffe, type: 3}
       propertyPath: m_CollisionDetection
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8132750149291521305, guid: 6b1d371ac857045438da614384c28ffe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3440,3 +3496,4 @@ SceneRoots:
   - {fileID: 5656532210806712905}
   - {fileID: 1254086304}
   - {fileID: 1704625778}
+  - {fileID: 1366845994}

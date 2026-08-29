@@ -8,6 +8,7 @@ public class GameMaster : MonoBehaviour
     public int meta = 3;              // cuántas víctimas hay que rescatar
     //Le digo quien es la salida para ver si ya paso por ahi el objeto
     public Renderer salida;           // para pintarla de color como aviso
+    public int vidas = 5;
 
     private int rescatadas = 0; //contador de victimas resctadas
     private bool terminada = false; //condicion de victoria
@@ -56,5 +57,14 @@ public class GameMaster : MonoBehaviour
     {
         //scenemanager, la escena que tenemos la resetea
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void Penalizar(int cantidad)
+    {
+        vidas -= cantidad;
+        Debug.Log("Vida perdida. Vidas restantes: " + vidas);
+        if (vidas <= 0)
+        {
+            Perder();
+        }
     }
 }
