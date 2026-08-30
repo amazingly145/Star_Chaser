@@ -15,6 +15,8 @@ public class GameMaster : MonoBehaviour
 
     // ¿Ya se rescataron todas? La Salida lo consulta antes de dejar ganar.
     //Definimos un metodo para ver si cumplimos o no la mision
+    public GameObject panelGanaste;
+    public GameObject panelPerdiste;
     public bool MisionCumplida
     {
         get { return rescatadas >= meta; }
@@ -41,6 +43,11 @@ public class GameMaster : MonoBehaviour
         if (terminada) return;
         terminada = true;
         Debug.Log("¡Ganaste!");
+        if (panelGanaste != null)
+        {
+            panelGanaste.SetActive(true);
+        }
+        Time.timeScale = 0f;
     }
 
     public void Perder()
@@ -50,11 +57,16 @@ public class GameMaster : MonoBehaviour
         Debug.Log("Perdiste");
         if (salida != null) salida.material.color = Color.red;
         //reinicio el juego
-        Invoke("Reiniciar", 1.5f);   // deja ver el mensaje antes de reiniciar
+        if (panelPerdiste != null)
+        {
+            panelPerdiste.SetActive(true);
+        }
+        Time.timeScale = 0f;
     }
 
-    void Reiniciar()
+    public void Reiniciar()
     {
+        Time.timeScale = 1f;
         //scenemanager, la escena que tenemos la resetea
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
