@@ -7,7 +7,6 @@ public class GameMaster : MonoBehaviour
     //la cantidad de victimas que necesitamos ayudar
     public int meta = 3;              // cuántas víctimas hay que rescatar
     //Le digo quien es la salida para ver si ya paso por ahi el objeto
-    public Renderer salida;           // para pintarla de color como aviso
     public int vidas = 5;
 
     public int rescatadas = 0; //contador de victimas resctadas
@@ -33,7 +32,10 @@ public class GameMaster : MonoBehaviour
         if (MisionCumplida)
         {
             Debug.Log("Todas rescatadas. Ve a la salida.");
-            if (salida != null) salida.material.color = Color.green;
+        }
+        if(rescatadas == 3)
+        {
+            Ganar();
         }
     }
 
@@ -55,7 +57,6 @@ public class GameMaster : MonoBehaviour
         if (terminada) return;
         terminada = true;
         Debug.Log("Perdiste");
-        if (salida != null) salida.material.color = Color.red;
         //reinicio el juego
         if (panelPerdiste != null)
         {
