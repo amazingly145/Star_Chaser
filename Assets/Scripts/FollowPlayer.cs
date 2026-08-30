@@ -11,7 +11,9 @@ public class FollowPlayer : MonoBehaviour
     //Variables
     //llamamos el jugador que va seguir la camara
     public GameObject player;
-    private Vector3 offset = new Vector3(-0.68f,1.85f,-2.41f);
+    public Vector3 offset = new Vector3(-1.11f,2.345f,-9f);
+    public float suavizadoPosicion = 5f;
+    public float suavizadoRotacion = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     /// <summary>
     /// This method is called before the first frame update
@@ -27,10 +29,15 @@ public class FollowPlayer : MonoBehaviour
     /// </summary>
     void LateUpdate()
     {
-        //la camara toma posicion de nuestro vehiculo
-        //son las coordenadas que tenemos posicionada la camara y la que nos interesa ver la camioneta
-        //transform.position = player.transform.position + new Vector3 (0,6,-7);
-        transform.position = player.transform.position + offset;
+        if (player == null) return;
+        Vector3 offsetRotado = player.transform.rotation * offset;
+        Vector3 posicionDeseada = player.transform.position + offsetRotado;
+        // Mueve la cámara suavemente hacia la posición deseada
+        transform.position = Vector3.Lerp(transform.position, posicionDeseada, suavizadoPosicion * Time.deltaTime);
+
+        // Gira suavemente para seguir mirando al jugador
+        Quaternion rotacionDeseada = Quaternion.LookRotation(player.transform.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, suavizadoRotacion * Time.deltaTime);
         
     }
 }
