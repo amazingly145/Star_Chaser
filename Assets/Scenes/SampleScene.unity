@@ -310,8 +310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &38022452
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,8 +430,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &40515796
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,8 +550,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &57791309
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,8 +984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &211597561 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7841272479765076621, guid: da8b7f1b2d5ad21448792f2611129a08, type: 3}
@@ -3578,8 +3578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &725677165
 GameObject:
   m_ObjectHideFlags: 0
@@ -4655,8 +4655,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &929416343
 GameObject:
   m_ObjectHideFlags: 0
@@ -5258,8 +5258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &1123208657
 GameObject:
   m_ObjectHideFlags: 0
@@ -5760,8 +5760,8 @@ MonoBehaviour:
   - {fileID: 725441466}
   - {fileID: 40515801}
   numPremios: 3
-  basuraPrefab: {fileID: 961672235710032402, guid: bb11cd58c6352e5419ed8ebe894a5cb6, type: 3}
-  premioPrefab: {fileID: 731843418626968143, guid: d4e4059ae1b17084a86f0da9020b3450, type: 3}
+  aliens: {fileID: 961672235710032402, guid: bb11cd58c6352e5419ed8ebe894a5cb6, type: 3}
+  premio: {fileID: 731843418626968143, guid: d4e4059ae1b17084a86f0da9020b3450, type: 3}
 --- !u!4 &1254086304
 Transform:
   m_ObjectHideFlags: 0
@@ -6086,8 +6086,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &1389972153
 GameObject:
   m_ObjectHideFlags: 0
@@ -6206,8 +6206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1001 &1397877005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6487,8 +6487,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!4 &1516897543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a7b3dab74cf15534ab122b220132fe41, type: 3}
@@ -6862,8 +6862,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &1659102784
 GameObject:
   m_ObjectHideFlags: 0
@@ -12600,8 +12600,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &1812555824
 GameObject:
   m_ObjectHideFlags: 0
@@ -13224,8 +13224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &1916026958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7597364774459119110, guid: f555961e138286345a83b0d14ba1a2d3, type: 3}
@@ -13244,8 +13244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &1934195505
 GameObject:
   m_ObjectHideFlags: 0
@@ -13364,8 +13364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::caja
   tipoContenido: 0
-  basuraPrefab: {fileID: 0}
-  premioPrefab: {fileID: 0}
+  aliens: {fileID: 0}
+  premio: {fileID: 0}
 --- !u!1 &1946921976
 GameObject:
   m_ObjectHideFlags: 0

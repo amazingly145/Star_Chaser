@@ -11,7 +11,9 @@ public class FollowPlayer : MonoBehaviour
     //Variables
     //llamamos el jugador que va seguir la camara
     public GameObject player;
+    //La posicion en que va estar la camara
     public Vector3 offset = new Vector3(-1.11f,2.345f,-9f);
+    //Varaibles de suavizado para que el movimiento de la cámara no sea tan brusco
     public float suavizadoPosicion = 5f;
     public float suavizadoRotacion = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,10 +34,10 @@ public class FollowPlayer : MonoBehaviour
         if (player == null) return;
         Vector3 offsetRotado = player.transform.rotation * offset;
         Vector3 posicionDeseada = player.transform.position + offsetRotado;
-        // Mueve la cámara suavemente hacia la posición deseada
+        //Mueve la cámara hacia la posición que esta mirando el personaje
         transform.position = Vector3.Lerp(transform.position, posicionDeseada, suavizadoPosicion * Time.deltaTime);
 
-        // Gira suavemente para seguir mirando al jugador
+        //Gira para poder seguir al jugador
         Quaternion rotacionDeseada = Quaternion.LookRotation(player.transform.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotacionDeseada, suavizadoRotacion * Time.deltaTime);
         
